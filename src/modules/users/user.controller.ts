@@ -1,7 +1,7 @@
-import { Body, Controller, Get, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, UseGuards } from "@nestjs/common";
 import { UserService } from "./user.service";
 import { UserCreateDto } from "./dto/user-create.dto";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { AuthGuard } from "../auth/auth.guard";
 import { RolesGuard } from "../auth/roles.guard";
 import { Roles } from "../auth/roles.decorator";
@@ -9,27 +9,32 @@ import { Roles } from "../auth/roles.decorator";
 @Controller('users')
 export class UserController {
     constructor(
-        private readonly userservice:UserService
-    ){}
+        private readonly userservice: UserService
+    ) { }
 
-@ApiTags('example')
+    @ApiTags('example')
     @Post('register-user')
-    async registerUser(@Body() usercreatedto:UserCreateDto) {
-        return await this.userservice.registerUser(usercreatedto.email,usercreatedto.password,usercreatedto.role,usercreatedto.username);
+    async registerUser(@Body() usercreatedto: UserCreateDto) {
+        return await this.userservice.registerUser(usercreatedto.username,usercreatedto.email, usercreatedto.password, usercreatedto.role);
     }
 
-@ApiTags('example')
+    @Post('login')
+    async logIn(@Body() body: { email: string, password: string }) {
+        return await this.userservice.logIn(body);
+    }
+
+    @ApiTags('example')
     @Get('get-users')
     async getUser() {
-        return await this.userservice.findUsers() ;
+        return await this.userservice.findUsers();
     }
 
     @Get('user/:id')
-    getUserById() {
-        return "User details by ID";
-    }  
-    
-    @UseGuards(AuthGuard,RolesGuard)
+    getUserById(@Param('id') id: number) {
+        return this.userservice.findUser(id);
+    }
+    @ApiBearerAuth()
+    @UseGuards(AuthGuard, RolesGuard)
     @Roles('admin')
     @Get('admin-data')
     getAdminData() {

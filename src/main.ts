@@ -9,6 +9,7 @@ async function bootstrap() {
     .setTitle('Nafa API')
     .setDescription('API documentation')
     .setVersion('1.0')
+    .addBearerAuth() 
     .addTag('example')
     .build();
   const document = SwaggerModule.createDocument(app, config);

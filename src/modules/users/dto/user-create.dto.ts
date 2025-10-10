@@ -8,6 +8,7 @@ export class UserCreateDto {
     username: string;
 
     @ApiProperty({ example: 'john@example.com', description: 'Email', default: 'john@example.com' })
+    @Matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, { message: 'Invalid email format' })
     @IsString()
     @IsNotEmpty()
     email: string;
