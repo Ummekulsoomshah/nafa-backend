@@ -4,9 +4,11 @@ import { AppService } from './app.service';
 import { UserModule } from './modules/users/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './modules/users/entites/user.entity';
+import { RiskAnswer } from './modules/riskProfiling/entities/risk-answer.entity';
+import { QuizModule } from './modules/riskProfiling/quiz.module';
 
 @Module({
-  imports: [UserModule,
+  imports: [UserModule,QuizModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -14,7 +16,7 @@ import { User } from './modules/users/entites/user.entity';
       username: 'postgres',
       password: 'postgres',
       database: 'nafaDb',
-      entities: [User],
+      entities: [User,RiskAnswer],
       synchronize: true,
     }),
   ],

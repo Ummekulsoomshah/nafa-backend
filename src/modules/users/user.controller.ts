@@ -12,7 +12,7 @@ export class UserController {
         private readonly userservice: UserService
     ) { }
 
-    @ApiTags('example')
+    @ApiTags('user api')
     @Post('register-user')
     async registerUser(@Body() usercreatedto: UserCreateDto) {
         return await this.userservice.registerUser(usercreatedto.username,usercreatedto.email, usercreatedto.password, usercreatedto.role);
@@ -23,7 +23,7 @@ export class UserController {
         return await this.userservice.logIn(body);
     }
 
-    @ApiTags('example')
+    @ApiTags('user api')
     @Get('get-users')
     async getUser() {
         return await this.userservice.findUsers();
