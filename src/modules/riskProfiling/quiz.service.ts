@@ -4,11 +4,13 @@ import { Repository } from "typeorm";
 import { RiskAnswer } from "./entities/risk-answer.entity";
 import { SubmitQuizDto } from "./dto/risk-answer.dto";
 import { User } from "src/modules/users/entites/user.entity";
+import { RiskClassifierService } from "src/utils/risk-classifier.service";
 
 @Injectable()
 export class QuizService {
     constructor(
-        @InjectRepository(RiskAnswer) private quizRepository: Repository<RiskAnswer>
+        @InjectRepository(RiskAnswer) private quizRepository: Repository<RiskAnswer>,
+        private readonly riskClassifierService: RiskClassifierService
     ){}
 
     async submitAnswers(answers:SubmitQuizDto,id:number){
@@ -21,7 +23,11 @@ export class QuizService {
             return quizData;
         });
         console.log(answerEntities);
-        return await this.quizRepository.save(answerEntities);
+        await this.quizRepository.save(answerEntities);
+
+        const riskCategory=await this.riskClassifierService.classifyRisk(answerEntities)
+
+        return { message: 'Answers submitted successfully', riskCategory  };
         
     }
 }
