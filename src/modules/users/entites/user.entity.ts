@@ -16,4 +16,7 @@ export class User {
 
     @Column({ default: 'user' })
     role:string;
+
+    @Column({ nullable: true })
+riskCategory: string;
 }
