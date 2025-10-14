@@ -20,7 +20,7 @@ export class QuizService {
             quizData.user = { id: id } as User;
             quizData.questionId = answer.questionId;
             quizData.questionText = answer.questionText;
-            quizData.selectedOption = answer.selectedOption;
+            quizData.quizAnswer = answer.quizAnswer;
             return quizData;
         });
         console.log(answerEntities);

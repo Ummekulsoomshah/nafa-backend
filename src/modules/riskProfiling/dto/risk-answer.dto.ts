@@ -10,7 +10,7 @@ class SingleAnswerDto {
   questionText: string;
 
   @IsString()
-  selectedOption: string; // can be "A", "B", "C", or full text if you prefer
+  quizAnswer: string; // can be "A", "B", "C", or full text if you prefer
 }
 
 export class SubmitQuizDto {

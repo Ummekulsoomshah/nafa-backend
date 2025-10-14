@@ -19,7 +19,7 @@ export class RiskClassifierService {
         const formatted = userResponses
             .map(
                 (r, i) =>
-                    `${i + 1}. Q: ${r.questionText}\n   A: ${r.selectedOption}`,
+                    `${i + 1}. Q: ${r.questionText}\n   A: ${r.quizAnswer}`,
             )
             .join('\n');
 

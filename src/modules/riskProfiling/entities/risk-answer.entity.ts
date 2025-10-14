@@ -25,7 +25,7 @@ export class RiskAnswer {
     questionText: string;
 
     @Column({ type: 'text' })
-    selectedOption: string;
+    quizAnswer: string;
 
     @CreateDateColumn()
     createdAt: Date;
