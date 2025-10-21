@@ -7,10 +7,11 @@ import { User } from './modules/users/entites/user.entity';
 import { RiskAnswer } from './modules/riskProfiling/entities/risk-answer.entity';
 import { QuizModule } from './modules/riskProfiling/quiz.module';
 import { DbModule } from './db/db.module';
+import { AiModule } from './ai/ai.module';
 
 @Module({
   imports: [UserModule,QuizModule,
-    DbModule],
+    DbModule,AiModule],
   controllers: [AppController],
   providers: [AppService],
 })
