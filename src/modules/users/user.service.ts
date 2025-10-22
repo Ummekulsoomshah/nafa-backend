@@ -29,8 +29,8 @@ export class UserService {
     async findUsers() {
         return await this.userRepository.find();
     }
-    async logIn({ email, password }: { email: string, password: string }) {
-        const user = await this.userRepository.findOne({ where: { email: email } })
+    async logIn(email: string, password: string): Promise<{ id: number, email: string, access_token: string }> {
+        const user = await this.userRepository.findOne({ where: { email }, select: ['id', 'email','password']    })
         if (!user) {
             throw new Error('User not found')
         }
@@ -40,7 +40,6 @@ export class UserService {
         }
         const access_token = await this.jwtService.signAsync({ id: user.id, username: user.username, role: user.role })
         return { ...user, access_token };
-
     }
 
     async findUser(userId: number) {

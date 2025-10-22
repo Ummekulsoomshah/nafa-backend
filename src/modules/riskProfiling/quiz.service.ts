@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { RiskAnswer } from "./entities/risk-answer.entity";
@@ -14,8 +14,13 @@ export class QuizService {
         private readonly riskClassifierService: RiskClassifierService
     ) { }
 
-    async submitAnswers(answers: SubmitQuizDto, id: number) {
-        const answerEntities = answers.answers.map(answer => {
+   async submitAnswers(answers: SubmitQuizDto, id: number) {
+    console.log('Received answers:', answers);
+    if (!answers || !Array.isArray(answers)) {
+      throw new BadRequestException('Invalid payload: answers.answers must be an array');
+    }
+    return await this.quizRepository.manager.transaction(async (manager) => {
+        const answerEntities = answers.map(answer => {
             const quizData = new RiskAnswer();
             quizData.user = { id: id } as User;
             quizData.questionId = answer.questionId;
@@ -23,16 +28,12 @@ export class QuizService {
             quizData.quizAnswer = answer.quizAnswer;
             return quizData;
         });
-        console.log(answerEntities);
-        await this.quizRepository.save(answerEntities);
-
-        const riskCategory = await this.riskClassifierService.classifyRisk(answerEntities)
-
-        // Update user's riskCategory
-        await this.userRepository.update(id, { riskCategory });
-
-
+        
+        await manager.save(RiskAnswer, answerEntities);
+        const riskCategory = await this.riskClassifierService.classifyRisk(answerEntities);
+        await manager.update(User, id, { riskCategory });
+        
         return { message: 'Answers submitted successfully', riskCategory };
-
-    }
+    });
+}
 }

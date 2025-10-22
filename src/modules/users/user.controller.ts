@@ -5,6 +5,7 @@ import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { AuthGuard } from "../auth/auth.guard";
 import { RolesGuard } from "../auth/roles.guard";
 import { Roles } from "../auth/roles.decorator";
+import { UserLoginDto } from "./dto/user-login.dto";
 
 @Controller('users')
 export class UserController {
@@ -19,8 +20,8 @@ export class UserController {
     }
 
     @Post('login')
-    async logIn(@Body() body: { email: string, password: string }) {
-        return await this.userservice.logIn(body);
+    async logIn(@Body() usercreatedto: UserLoginDto) {
+        return await this.userservice.logIn(usercreatedto.email,usercreatedto.password);
     }
 
     @ApiTags('user api')

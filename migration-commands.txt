@@ -1,0 +1,8 @@
+# Step 1: Generate new migration (from entities)
+yarn migration:generate src/db/migrations/AddIndexesToUser
+
+# Step 2: Run it locally
+yarn migration:run
+
+# Step 3: In production (after build)
+yarn migration:run:prod

@@ -1,4 +1,3 @@
-// src/risk/entities/risk-answer.entity.ts
 import {
     Entity,
     PrimaryGeneratedColumn,
@@ -6,10 +5,12 @@ import {
     ManyToOne,
     JoinColumn,
     CreateDateColumn,
+    Index,
 } from 'typeorm';
 import { User } from '../../users/entites/user.entity'
 
 @Entity('risk_answers')
+@Index(['user', 'questionId'])
 export class RiskAnswer {
     @PrimaryGeneratedColumn()
     id: number;
@@ -27,6 +28,7 @@ export class RiskAnswer {
     @Column({ type: 'text' })
     quizAnswer: string;
 
+    @Index()
     @CreateDateColumn()
     createdAt: Date;
 }
