@@ -7,7 +7,7 @@ export class AiService {
   constructor(private readonly httpService: HttpService) {}
 
   async getRecommendationsByRisk(risk: string) {
-    const apiUrl = 'http://localhost:8001/recommend-by-risk'; // Python FastAPI URL
+    const apiUrl = 'http://127.0.0.1:8000/recommend-by-risk'; // Python FastAPI URL
 
     try {
       const body = { risk };

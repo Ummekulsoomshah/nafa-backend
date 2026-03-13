@@ -1,0 +1,176 @@
+Ticker,CompanyName,Status,OpenPrice,ClosePrice,DailyReturn%,SharesOutstanding,MarketCap,CAGR,Volatility,RiskScore,RiskLevel,Sector
+UBL,United Bank Limited,Not Halal (Conventional),680.74,692.16,1.6776,329237316,227884900643,0.0944,0.323,0,Low,Banking
+MARI,Mari Petroleum Company Limited,Halal (Shariah Compliant),440.43,436.51,-0.89,1555999102,679209168014,0.055,0.8357,0.0561,Low,Oil & Gas
+MEBL,Meezan Bank Limited,Halal (Shariah Compliant),65.66,61.18,-6.823,280995032,17191276058,0.1448,3.5086,0.2785,Low,Banking
+FFC,Fauji Fertilizer Company Limited,Halal (Shariah Compliant),923.02,910.2,-1.3889,2595460470,2362388119794,0.0685,3.4943,0.3152,Moderate,Fertilizer
+LUCK,Lucky Cement Limited,Halal (Shariah Compliant),1722.68,1704.15,-1.0756,115661557,197104642362,0.1384,6.7819,0.609,High,Cement
+PPL,Pakistan Petroleum Limited,Halal (Shariah Compliant),1620.63,1599.53,-1.302,3436953481,5497510201464,0.038,1.2708,0.1081,Low,Oil & Gas
+NBP,National Bank of Pakistan,Not Halal (Conventional),1227.79,1220.37,-0.6043,1985750007,2423349736043,-0.0136,2.9389,0.3007,Moderate,Banking
+HBL,Habib Bank Limited,Not Halal (Conventional),637.19,693.49,8.8357,965029554,669238345403,0.1439,4.9841,0.4265,Moderate,Banking
+MCB,MCB Bank Limited,Not Halal (Conventional),910.51,934.14,2.5952,3649996379,3409607617479,0.0153,1.5709,0.1494,Low,Banking
+PAKT,Pakistan Tobacco Company Limited,Not Halal,408.05,408.67,0.1519,1973952583,806695202095,0.0043,1.2472,0.1226,Low,FMCG
+BWCL,Bestway Cement Limited,Halal (Shariah Compliant),1181.77,1191.1,0.7895,1416195951,1686830997236,0.0093,3.0478,0.3001,Moderate,Cement
+NESTLE,Nestlé Pakistan Limited,Halal (Subject to Financial Screens),167.61,171.38,2.2493,3658585481,627008379734,0.1043,4.2194,0.3698,Moderate,FMCG
+COLG,Colgate-Palmolive Pakistan Limited,Halal (Subject to Financial Screens),1854.08,1900.19,2.4869,4257690960,8090421785282,0.0399,2.6028,0.2403,Low,FMCG
+FATIMA,Fatima Fertilizer Company Limited,Halal (Shariah Compliant),145.85,141.74,-2.818,3661550582,518988179493,0.0775,0.9905,0.0603,Low,Fertilizer
+EFERT,Engro Fertilizers Limited,Halal (Shariah Compliant),1131.26,1148.01,1.4806,4252123430,4881480218874,0.0943,1.7972,0.1326,Low,Fertilizer
+ENGROH,Engro Holding Limited,Halal (Shariah Compliant),1546.52,1710.71,10.6167,2166328040,3705959041308,-0.0449,0.301,0.0525,Low,Conglomerate
+HUBC,The Hub Power Company Limited,Halal (Shariah Compliant),419.4,420.74,0.3195,2838214081,1194150192440,0.0891,4.4029,0.3957,Moderate,Power
+SYS,Systems Limited,Halal (Shariah Compliant),1395.67,1414.92,1.3793,1513386744,2141321171820,-0.0289,4.2416,0.4386,Moderate,Technology
+PSO,Pakistan State Oil Company Limited,Halal (Shariah Compliant),459.77,457.34,-0.5285,4717403034,2157457103570,0.0146,0.0057,0,Low,Oil & Gas
+KEL,K-Electric Limited,Halal (Shariah Compliant),1125.04,1108.3,-1.4879,1306881298,1448416542573,-0.0006,1.6338,0.1637,Low,Power
+PTC,Pakistan Telecommunication Company Limited,Halal (Shariah Compliant),1004.55,977.25,-2.7176,232590389,227298957650,0.0719,0.4815,0.0122,Low,Telecom
+POL,Pakistan Oilfields Limited,Halal (Shariah Compliant),989.12,1027.98,3.9287,1226305842,1260617879459,0.0956,3.8798,0.3402,Moderate,Oil & Gas
+ATLH,Atlas Honda Limited,Halal (Shariah Compliant),655.14,691.96,5.6202,132109753,91414664686,0.0524,4.184,0.3922,Moderate,Automobile
+INDU,Indus Motor Company Limited,Halal (Shariah Compliant),710.36,723.03,1.7836,4196665024,3034314712303,0.0851,4.1742,0.3749,Moderate,Automobile
+ISL,International Steels Limited,Halal (Shariah Compliant),1729.01,1721.19,-0.4523,4543083846,7819510484897,0.0684,3.1461,0.2804,Low,Steel
+TRG,TRG Pakistan Limited,Halal (Shariah Compliant),105.46,106.21,0.7112,4965175740,527351315345,-0.0352,4.4588,0.4635,Moderate,Technology
+BAFL,Bank Alfalah Limited,Not Halal (Conventional),150.21,153.34,2.0596,3050000000,467267000000,0.1131,3.2151,0.2986,Low,Banking
+EFU,EFU General Insurance Limited,Halal (Shariah Compliant),55.25,54.9,-0.6358,1230000000,67527000000,0.1221,2.4783,0.2166,Low,Insurance
+SNGP,Sui Northern Gas Pipelines Limited,Halal (Shariah Compliant),26.51,26.3,-0.7882,2925000000,76882500000,0.0211,0.4563,0.0096,Low,Gas Utility
+MUGHAL,Mughal Iron & Steel Industries Limited,Halal (Shariah Compliant),37.99,37.5,-1.2935,1250000000,46875000000,0.1126,4.1234,0.3875,Moderate,Steel
+BAHL,Bank of Asia Limited,Not Halal (Conventional),12.5,12.6,0.8,5000000000,6300000000,0.09,3.5,0.25,Low,Banking
+SHEL,Shell Pakistan Limited,Not Halal (Conventional),1450.75,1445.89,-0.3341,200000000,289178000000,0.025,1.2,0.1,Low,Oil & Gas
+HUBCL,Hub Power Company Limited - Cl A,Halal (Shariah Compliant),419.4,420.74,0.3195,2838214081,1194150192440,0.0891,4.4029,0.3957,Moderate,Power
+ENGRO,Engro Corporation Limited,Halal (Shariah Compliant),285.4,289.1,1.3,1200000000,346920000000,0.092,2.31,0.21,Low,Conglomerate
+UNITY,Unity Foods Limited,Halal (Shariah Compliant),34.2,33.8,-1.17,3800000000,128440000000,0.081,3.85,0.42,Moderate,FMCG
+EPCL,Engro Polymer & Chemicals Limited,Halal (Shariah Compliant),46.1,47.25,2.49,2500000000,118125000000,0.064,2.12,0.19,Low,Chemicals
+SEARL2,Searle Pakistan Pharma,Halal (Subject to Financial Screens),215.3,212.1,-1.49,900000000,190890000000,0.11,2.88,0.27,Moderate,Pharmaceuticals
+ICI,ICI Pakistan Limited,Halal (Subject to Financial Screens),765.5,781.4,2.08,520000000,406328000000,0.089,2.45,0.22,Low,Chemicals
+AVN,Avenir Technologies,Halal (Shariah Compliant),58.9,61.1,3.73,3100000000,189410000000,0.132,4.9,0.51,High,Technology
+DGKC2,DG Khan Cement Holdings,Halal (Shariah Compliant),92.3,90.4,-2.06,4100000000,370640000000,0.041,3.21,0.33,Moderate,Cement
+SHEL,Shell Pakistan Limited,Not Halal (Conventional),178.4,181.2,1.57,650000000,117780000000,0.055,2.76,0.26,Low,Oil & Gas
+HASCOL,Hascol Petroleum Limited,Not Halal (Conventional),7.8,8.05,3.21,5500000000,44275000000,-0.12,6.2,0.78,High,Oil & Gas
+BYCO,Byco Petroleum Pakistan,Halal (Shariah Compliant),6.4,6.35,-0.78,9800000000,62230000000,0.022,3.4,0.36,Moderate,Oil & Gas
+PAKTEL,PakTel Communications,Halal (Shariah Compliant),24.6,25.1,2.03,4200000000,105420000000,0.097,1.88,0.15,Low,Telecom
+GATM,Gul Ahmed Textile Mills,Halal (Shariah Compliant),41.9,42.8,2.15,3500000000,149800000000,0.073,2.54,0.23,Low,Textile
+KAPCO,Kot Addu Power Company,Halal (Shariah Compliant),33.7,34.05,1.04,4300000000,146415000000,0.069,2.77,0.26,Low,Power
+NCPL,Nishat Chunian Power,Halal (Shariah Compliant),19.4,19.1,-1.55,2800000000,53480000000,0.061,2.15,0.2,Low,Power
+BIPL,BankIslami Pakistan,Halal (Shariah Compliant),15.8,16.05,1.58,4600000000,73830000000,0.082,3.95,0.41,Moderate,Banking
+MUGHAL,Mughal Iron & Steel,Halal (Shariah Compliant),64.2,66.8,4.05,2100000000,140280000000,0.101,3.88,0.39,Moderate,Steel
+ASTL,Amreli Steels Limited,Halal (Shariah Compliant),19.1,18.75,-1.83,3600000000,67500000000,0.044,3.66,0.37,Moderate,Steel
+YOUW,Youwells Energy,Halal (Shariah Compliant),12.6,12.95,2.78,5000000000,64750000000,0.086,4.12,0.46,Moderate,Oil & Gas
+MTL2,Millat Tractors Holdings,Halal (Shariah Compliant),560.4,575.3,2.66,280000000,161084000000,0.079,2.21,0.18,Low,Automobile
+PAKTEXT,Pak Textiles Corp,Halal (Shariah Compliant),22.8,22.4,-1.75,3900000000,87360000000,0.058,2.92,0.29,Low,Textile
+FCL,Fatima Cement Limited,Halal (Shariah Compliant),18.3,18.95,3.55,4200000000,79590000000,0.067,3.18,0.32,Moderate,Cement
+TPL,TPL Properties Limited,Halal (Shariah Compliant),8.2,8.1,-1.22,6200000000,50220000000,-0.04,5.44,0.61,High,Real Estate
+MARI2,Mari Energies Expansion,Halal (Shariah Compliant),445.1,452.3,1.62,600000000,271380000000,0.098,2.01,0.17,Low,Oil & Gas
+EFU,EFU Life Assurance,Not Halal (Conventional),94.6,95.2,0.63,1500000000,142800000000,0.052,1.44,0.1,Low,Insurance
+JLIC,Jubilee Life Insurance,Not Halal (Conventional),81.3,82.6,1.6,1700000000,140420000000,0.061,1.88,0.14,Low,Insurance
+TPLP,TPL Corp Power,Halal (Shariah Compliant),6.1,6.35,4.1,7000000000,44450000000,0.089,5.1,0.57,High,Power
+ZIL,Zahid Industries Limited,Halal (Shariah Compliant),29.4,30.05,2.21,3100000000,93155000000,0.072,2.66,0.24,Low,Manufacturing
+PAKINS,Pak Insurance Co,Not Halal (Conventional),7.9,7.85,-0.63,2600000000,20410000000,0.045,1.9,0.16,Low,Insurance
+APTM,Al-Abbas Sugar Mills Limited,Halal (Shariah Compliant),410.5,415.2,1.14,180000000,74736000000,0.084,2.41,0.22,Low,FMCG
+ASL,Aisha Steel Mills Limited,Halal (Shariah Compliant),12.8,12.45,-2.73,5200000000,64740000000,0.031,4.95,0.56,High,Steel
+ATBA,Atlas Battery Limited,Halal (Shariah Compliant),235.4,241.9,2.76,650000000,157235000000,0.112,2.98,0.27,Moderate,Automobile
+BERG,Berger Paints Pakistan Limited,Halal (Subject to Financial Screens),88.6,90.1,1.69,900000000,81090000000,0.075,2.14,0.19,Low,Chemicals
+CEPB,Cepak Limited,Halal (Shariah Compliant),29.7,30.4,2.36,2100000000,63840000000,0.069,3.21,0.32,Moderate,Packaging
+CLVL,Clover Pakistan Limited,Halal (Subject to Financial Screens),10.2,10.05,-1.47,3400000000,34170000000,0.041,2.75,0.26,Low,FMCG
+CSAP,Crescent Steel and Allied Products,Halal (Shariah Compliant),67.3,69.8,3.71,1400000000,97720000000,0.096,3.44,0.35,Moderate,Steel
+DOL,Dolmen REIT Management,Halal (Shariah Compliant),96.4,97.1,0.73,1100000000,106810000000,0.062,1.88,0.14,Low,REIT
+EXIDE,Exide Pakistan Limited,Halal (Shariah Compliant),258.6,252.1,-2.51,520000000,131092000000,0.071,3.02,0.29,Low,Automobile
+FERO,Ferozsons Laboratories Limited,Halal (Subject to Financial Screens),201.4,206.9,2.73,730000000,151037000000,0.108,2.67,0.24,Low,Pharmaceuticals
+GHGL,Ghani Glass Limited,Halal (Shariah Compliant),23.1,24.2,4.76,3100000000,75020000000,0.121,4.11,0.46,Moderate,Glass
+GHPL,Ghandhara Tyre & Rubber Limited,Halal (Shariah Compliant),41.8,42.3,1.2,1800000000,76140000000,0.067,2.54,0.23,Low,Automobile
+GSKCH,Global Spinning & Knitting Mills,Halal (Shariah Compliant),19.6,19.25,-1.79,2600000000,50050000000,0.052,3.65,0.37,Moderate,Textile
+HBLT,HBL Asset Management,Not Halal (Conventional),52.9,53.4,0.95,900000000,48060000000,0.061,1.72,0.13,Low,Financial Services
+IBLHL,IBL HealthCare Limited,Halal (Subject to Financial Screens),39.2,40.6,3.57,1700000000,69020000000,0.109,3.89,0.41,Moderate,Pharmaceuticals
+JATM,Janana De Malucho Textile Mills,Halal (Shariah Compliant),61.8,62.1,0.49,420000000,26082000000,0.044,2.21,0.18,Low,Textile
+KSBP,KSB Pumps Company Limited,Halal (Shariah Compliant),132.5,135.8,2.49,580000000,78764000000,0.083,2.73,0.25,Low,Engineering
+LOAD,Loads Limited,Halal (Shariah Compliant),20.1,19.3,-3.98,2500000000,48250000000,0.028,4.82,0.55,High,Automobile
+MACFL,MACPAC Films Limited,Halal (Shariah Compliant),24.4,25.1,2.87,1900000000,47690000000,0.091,3.14,0.3,Moderate,Packaging
+MDTL,Mitchells Fruit Farms Limited,Halal (Subject to Financial Screens),118.2,119.4,1.02,350000000,41790000000,0.065,1.96,0.15,Low,FMCG
+MEHT,Mehmood Textile Mills,Halal (Shariah Compliant),542.6,550.9,1.53,140000000,77126000000,0.088,2.19,0.2,Low,Textile
+NETS,NetSol Technologies Limited,Halal (Shariah Compliant),152.4,156.3,2.56,620000000,96906000000,0.134,5.22,0.58,High,Technology
+OLPL,OLP Financial Services Pakistan,Not Halal (Conventional),27.6,27.9,1.09,2300000000,64170000000,0.074,2.83,0.27,Low,Financial Services
+PIBT,Pakistan International Bulk Terminal,Halal (Shariah Compliant),7.4,7.15,-3.38,5600000000,40040000000,0.019,4.44,0.49,Moderate,Logistics
+POWER,Power Cement Limited,Halal (Shariah Compliant),6.9,7.1,2.9,8800000000,62480000000,0.057,3.71,0.38,Moderate,Cement
+PREMA,Premier Sugar Mills,Halal (Shariah Compliant),55.2,56,1.45,390000000,21840000000,0.063,2.09,0.17,Low,FMCG
+QUICE,Quice Food Industries,Halal (Subject to Financial Screens),34.8,35.6,2.3,1500000000,53400000000,0.079,2.62,0.24,Low,FMCG
+SITC,Sindh Industrial Trading,Halal (Shariah Compliant),21.4,20.9,-2.34,2700000000,56430000000,0.036,3.57,0.36,Moderate,Industrial
+TELE,Telecard Limited,Halal (Shariah Compliant),4.8,4.65,-3.12,9100000000,42315000000,0.012,5.91,0.69,High,Telecom
+UNITY2,Unity Power Generation,Halal (Shariah Compliant),14.3,14.7,2.8,3600000000,52920000000,0.086,3.09,0.31,Moderate,Power
+WAVES,Waves Singer Pakistan Limited,Halal (Shariah Compliant),19.2,18.95,-1.3,3100000000,58745000000,0.048,2.66,0.25,Low,Consumer Durables
+YOUW2,Youwells Refining Limited,Halal (Shariah Compliant),11.9,12.2,2.52,4200000000,51240000000,0.072,3.88,0.4,Moderate,Oil & Gas
+ZAHID,Zahidjee Textile Mills,Halal (Shariah Compliant),26.8,27.1,1.12,2000000000,54200000000,0.067,2.47,0.22,Low,Textile
+ALNRS,Al-Noor Sugar Mills Limited,Halal (Shariah Compliant),68.4,69.55,1.68,1900000000,132145000000,0.074,2.31,0.21,Low,FMCG
+ARPL,Archroma Pakistan Limited,Halal (Subject to Financial Screens),312.8,318.4,1.79,420000000,133728000000,0.083,2.67,0.25,Low,Chemicals
+ASHT,Al-Shaheer Corporation Limited,Halal (Shariah Compliant),14.2,14.05,-1.06,5600000000,78680000000,0.041,3.98,0.44,Moderate,FMCG
+BATA,Bata Pakistan Limited,Halal (Subject to Financial Screens),1750.3,1774.9,1.41,110000000,195239000000,0.102,2.18,0.19,Low,Consumer Durables
+BCL,Bolan Castings Limited,Halal (Shariah Compliant),52.1,53.8,3.26,900000000,48420000000,0.091,3.44,0.35,Moderate,Engineering
+CHAS,Chashma Sugar Mills Limited,Halal (Shariah Compliant),24.6,25.1,2.03,3100000000,77810000000,0.068,2.87,0.27,Low,FMCG
+CLOV,Clover Pakistan Limited,Halal (Subject to Financial Screens),9.3,9.15,-1.61,4200000000,38430000000,0.037,2.54,0.24,Low,FMCG
+CYAN,Cyan Limited,Halal (Shariah Compliant),41.8,42.95,2.75,1500000000,64425000000,0.079,2.91,0.28,Low,Financial Services
+DADX,Dawood Hercules Corporation,Halal (Shariah Compliant),210.6,214.9,2.04,650000000,139685000000,0.086,2.35,0.22,Low,Conglomerate
+DFML,Dewan Farooque Motors Limited,Halal (Shariah Compliant),18.9,18.25,-3.44,2800000000,51100000000,0.022,4.87,0.56,High,Automobile
+DSIL,Dost Steels Limited,Halal (Shariah Compliant),12.4,12.95,4.44,4700000000,60865000000,0.098,4.21,0.46,Moderate,Steel
+ELSM,Ellcot Spinning Mills Limited,Halal (Shariah Compliant),19.7,19.4,-1.52,2500000000,48500000000,0.051,3.02,0.29,Low,Textile
+EPQL,Engro Powergen Qadirpur,Halal (Shariah Compliant),31.6,31.95,1.11,4800000000,153360000000,0.073,2.44,0.23,Low,Power
+FASM,Faisal Spinning Mills Limited,Halal (Shariah Compliant),420.8,426.3,1.31,180000000,76734000000,0.087,2.12,0.18,Low,Textile
+GHCL,Ghani Chemical Industries,Halal (Shariah Compliant),52.7,54.1,2.66,1200000000,64920000000,0.092,3.33,0.34,Moderate,Chemicals
+GSPM,Gulshan Spinning Mills,Halal (Shariah Compliant),18.2,17.95,-1.37,3600000000,64620000000,0.046,2.71,0.26,Low,Textile
+HABSM,Habib Sugar Mills Limited,Halal (Shariah Compliant),52.4,53.9,2.86,850000000,45815000000,0.083,2.38,0.22,Low,FMCG
+HUBP,Hub Power Services,Halal (Shariah Compliant),38.1,38.95,2.23,2100000000,81795000000,0.078,2.95,0.29,Low,Power
+IGIL,IGI Life Insurance Limited,Not Halal (Conventional),67.9,68.3,0.59,1300000000,88790000000,0.064,1.88,0.14,Low,Insurance
+ISPL,International Steels Processing,Halal (Shariah Compliant),34.8,35.6,2.3,1900000000,67640000000,0.081,3.01,0.3,Moderate,Steel
+JUBS,Jubilee Spinning Mills,Halal (Shariah Compliant),46.1,47.2,2.39,900000000,42480000000,0.074,2.66,0.25,Low,Textile
+KHTC,Khyber Tobacco Company,Not Halal (Conventional),310.4,315.6,1.67,300000000,94680000000,0.058,2.19,0.2,Low,FMCG
+KOEL,Kohinoor Energy Limited,Halal (Shariah Compliant),19.6,19.95,1.79,3800000000,75810000000,0.069,3.22,0.32,Moderate,Power
+LPL,Lotte Pakistan PTA Limited,Halal (Subject to Financial Screens),14.8,15.1,2.03,6200000000,93620000000,0.076,3.45,0.35,Moderate,Chemicals
+MDIB,Meezan Dilbahar Industries,Halal (Shariah Compliant),27.5,28.2,2.55,2000000000,56400000000,0.082,3.12,0.31,Moderate,Manufacturing
+MUREB,Mureb Cement Limited,Halal (Shariah Compliant),41.2,42.1,2.18,1700000000,71570000000,0.068,3.05,0.3,Low,Cement
+NCL,Nishat Chunian Limited,Halal (Shariah Compliant),46.8,48.2,2.99,1500000000,72300000000,0.091,3.41,0.34,Moderate,Textile
+PGL,Power Generation Limited,Halal (Shariah Compliant),21.3,21.75,2.11,2900000000,63075000000,0.073,2.88,0.27,Low,Power
+PRWM,Pak Reinsurance Workers Mills,Not Halal (Conventional),18.6,18.95,1.88,3400000000,64430000000,0.055,2.14,0.19,Low,Insurance
+RUPL,Rupali Polyester Limited,Halal (Shariah Compliant),12.1,12.35,2.07,5100000000,62985000000,0.067,3.69,0.38,Moderate,Textile
+SCL,Sapphire Ceramics Limited,Halal (Shariah Compliant),38.7,39.6,2.33,1600000000,63360000000,0.085,3.05,0.3,Moderate,Manufacturing
+SERT,Service Textiles Limited,Halal (Shariah Compliant),21.4,21.95,2.57,2800000000,61460000000,0.081,2.91,0.28,Low,Textile
+SFL,Safat Foods Limited,Halal (Subject to Financial Screens),16.8,17.1,1.79,4300000000,73530000000,0.072,2.65,0.25,Low,FMCG
+SITM,Sindh Textile Mills,Halal (Shariah Compliant),14.5,14.25,-1.72,3600000000,51300000000,0.044,3.11,0.31,Moderate,Textile
+SPL,Sacred Power Limited,Halal (Shariah Compliant),26.4,26.95,2.08,2200000000,59290000000,0.077,2.84,0.27,Low,Power
+STML,Star Textile Mills Limited,Halal (Shariah Compliant),18.9,19.4,2.65,3000000000,58200000000,0.083,3.29,0.33,Moderate,Textile
+TOWL,Towellers Limited,Halal (Shariah Compliant),19.2,18.85,-1.82,4100000000,77385000000,0.048,2.97,0.29,Low,Textile
+UNITYF,Unity Foods Expansion,Halal (Shariah Compliant),32.1,33.4,4.05,2600000000,86840000000,0.104,4.02,0.45,Moderate,FMCG
+ZTL,Zahid Textile Limited,Halal (Shariah Compliant),24.7,25.3,2.43,1900000000,48070000000,0.079,2.76,0.26,Low,Textile
+ADAM,Adamjee Insurance Company Limited,Not Halal (Conventional),47.8,48.65,1.78,5200000000,253980000000,0.061,2.02,0.18,Low,Insurance
+AGIC,Askari General Insurance Company Limited,Not Halal (Conventional),29.6,30.1,1.69,2100000000,63210000000,0.057,2.18,0.2,Low,Insurance
+AGTL,Al-Ghazi Tractors Limited,Halal (Shariah Compliant),356.2,361.8,1.57,480000000,173664000000,0.083,2.64,0.25,Low,Automobile
+ANL,Atlas Engineering Limited,Halal (Shariah Compliant),84.1,86.35,2.67,900000000,77715000000,0.091,3.31,0.33,Moderate,Engineering
+BWHL,Bilal Wood Industries Limited,Halal (Shariah Compliant),19.4,19.95,2.84,3100000000,61845000000,0.076,2.98,0.29,Low,Manufacturing
+CASH,Cash & Carry Pakistan Limited,Halal (Subject to Financial Screens),34.8,35.4,1.72,1500000000,53100000000,0.069,2.41,0.22,Low,Retail
+CCL,Century Cement Limited,Halal (Shariah Compliant),24.3,24.85,2.26,4200000000,104370000000,0.064,3.08,0.3,Moderate,Cement
+CPL,Crescent Petroleum Limited,Halal (Shariah Compliant),41.9,42.3,0.95,2200000000,93060000000,0.071,2.59,0.24,Low,Oil & Gas
+DCRH,Dawood Corporation Holdings,Halal (Shariah Compliant),176.4,179.1,1.53,650000000,116415000000,0.082,2.17,0.19,Low,Conglomerate
+DEPL,Diamond Energy Pakistan Limited,Halal (Shariah Compliant),18.6,18.95,1.88,2800000000,53060000000,0.074,3.44,0.35,Moderate,Power
+DSMI,Dewan Sugar Mills Limited,Halal (Shariah Compliant),9.8,9.65,-1.53,7600000000,73340000000,0.028,4.96,0.57,High,FMCG
+EFUG,EFU General Insurance Limited,Not Halal (Conventional),94.3,95.1,0.85,1300000000,123630000000,0.062,1.94,0.16,Low,Insurance
+ENGP,Engro Powergen Limited,Halal (Shariah Compliant),28.4,28.85,1.58,4200000000,121170000000,0.077,2.36,0.23,Low,Power
+FANM,Faran Manufacturing Limited,Halal (Shariah Compliant),22.6,23.15,2.43,1800000000,41670000000,0.085,3.27,0.33,Moderate,Manufacturing
+FML,Faisal Moving Logistics Limited,Halal (Shariah Compliant),31.2,31.95,2.4,1900000000,60705000000,0.079,2.84,0.27,Low,Logistics
+FRCL,Frontier Ceramics Limited,Halal (Shariah Compliant),27.8,28.4,2.16,1600000000,45440000000,0.073,3.01,0.3,Moderate,Ceramics
+GADT,Gadoon Textile Mills Limited,Halal (Shariah Compliant),98.6,101.2,2.64,420000000,42504000000,0.087,2.46,0.23,Low,Textile
+GHUL,Ghulam Faruque Group Limited,Halal (Shariah Compliant),62.4,63.8,2.24,980000000,62524000000,0.081,2.72,0.26,Low,Conglomerate
+GLPL,Greenleaf Power Limited,Halal (Shariah Compliant),15.9,16.25,2.2,3600000000,58500000000,0.069,3.38,0.34,Moderate,Power
+GRYL,Grays Leasing Limited,Not Halal (Conventional),7.4,7.3,-1.35,5100000000,37230000000,0.031,4.61,0.52,High,Financial Services
+HINO,Hino Pak Motors Limited,Halal (Shariah Compliant),185.4,189.1,1.99,520000000,98332000000,0.092,2.68,0.25,Low,Automobile
+HRTM,Hari Textile Mills Limited,Halal (Shariah Compliant),17.3,17.65,2.02,2800000000,49420000000,0.076,2.91,0.28,Low,Textile
+ICIB,ICIB Bank Limited,Not Halal (Conventional),52.8,54.1,2.46,1900000000,102790000000,0.068,2.21,0.2,Low,Banking
+INDM,Indus Dyeing & Manufacturing,Halal (Shariah Compliant),245.6,249.9,1.75,350000000,87465000000,0.084,2.33,0.22,Low,Textile
+JPL,Jahangir Siddiqui Power Limited,Halal (Shariah Compliant),21.1,21.55,2.13,3000000000,64650000000,0.078,2.96,0.29,Low,Power
+KCL,Karam Ceramics Limited,Halal (Shariah Compliant),33.6,34.2,1.79,1700000000,58140000000,0.071,2.88,0.27,Low,Ceramics
+LSE,Lahore Stock Exchange Services,Halal (Shariah Compliant),56.4,57.1,1.24,900000000,51390000000,0.063,2.19,0.2,Low,Financial Services
+MACL,Metro Auto Components Limited,Halal (Shariah Compliant),48.9,50.2,2.66,1200000000,60240000000,0.089,3.12,0.31,Moderate,Automobile
+MEBP,Meezan Energy Pakistan Limited,Halal (Shariah Compliant),72.6,74.1,2.07,850000000,62985000000,0.086,2.55,0.24,Low,Oil & Gas
+NATU,Nature Foods Pakistan Limited,Halal (Subject to Financial Screens),26.4,27.1,2.65,2400000000,65040000000,0.091,3.05,0.3,Moderate,FMCG
+OLPM,OLP Modaraba,Halal (Shariah Compliant),11.8,12.05,2.12,4800000000,57840000000,0.073,3.49,0.36,Moderate,Financial Services
+PICO,Pico Foods Limited,Halal (Subject to Financial Screens),19.2,19.65,2.34,3300000000,64845000000,0.079,2.92,0.28,Low,FMCG
+QBL,Qasim Bank Limited,Not Halal (Conventional),38.1,39.4,3.41,2600000000,102440000000,0.085,3.56,0.38,Moderate,Banking
+SAFL,Safeway Foods Limited,Halal (Subject to Financial Screens),21.7,22.15,2.07,2900000000,64235000000,0.081,2.74,0.26,Low,FMCG
+SHLM,Shalimar Textile Mills Limited,Halal (Shariah Compliant),54.2,55.6,2.58,980000000,54488000000,0.086,3.03,0.3,Moderate,Textile
+SICL,Sindh Insurance Company Limited,Not Halal (Conventional),6.9,7.05,2.17,7200000000,50760000000,0.064,4.12,0.45,Moderate,Insurance
+SPLM,Sapphire Power Limited,Halal (Shariah Compliant),24.3,24.85,2.26,2700000000,67095000000,0.077,2.89,0.28,Low,Power
+STIL,Star Industries Limited,Halal (Shariah Compliant),36.5,37.3,2.19,1600000000,59680000000,0.082,3.07,0.31,Moderate,Manufacturing
+TCL,Tariq Corporation Limited,Halal (Shariah Compliant),28.6,29.3,2.45,2000000000,58600000000,0.088,3.19,0.32,Moderate,Industrial
+UBLH,UBL Holdings Limited,Not Halal (Conventional),71.2,72.9,2.39,900000000,65610000000,0.076,2.43,0.23,Low,Financial Services
+WIPM,World Industrial Products Limited,Halal (Shariah Compliant),42.1,43.3,2.85,1400000000,60620000000,0.091,3.24,0.33,Moderate,Manufacturing
+ZETL,Zeta Energy Technologies Limited,Halal (Shariah Compliant),19.8,20.25,2.27,3500000000,70875000000,0.084,3.67,0.37,Moderate,Energy

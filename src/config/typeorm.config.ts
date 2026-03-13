@@ -4,7 +4,6 @@ import { config } from 'dotenv';
 config();
 const configService = new ConfigService();
 
-// Detect if we're running TS directly (dev) or JS (compiled)
 const isTsEnv = __filename.endsWith('.ts');
 
 const AppDataSource = new DataSource({

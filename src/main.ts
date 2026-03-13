@@ -5,12 +5,17 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,POST,PUT,DELETE,OPTIONS',
+    credentials: true,
+  });
 
   const config = new DocumentBuilder()
     .setTitle('Nafa API')
     .setDescription('API documentation')
     .setVersion('1.0')
-    .addBearerAuth() 
+    .addBearerAuth()
     .addTag('user api')
     .build();
   const document = SwaggerModule.createDocument(app, config);

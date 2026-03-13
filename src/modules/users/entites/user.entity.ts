@@ -11,6 +11,7 @@ export class User {
     @Column()
     @Index('IDX_user_email')
     email: string;
+    
 
     @Column()
     password: string;

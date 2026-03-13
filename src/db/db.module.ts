@@ -14,6 +14,7 @@ import { ConfigModule } from '@nestjs/config';
     TypeOrmModule.forRootAsync({
       useFactory: async () => ({
         ...databaseConfig,
+        logging: true,
         entities: [User, RiskAnswer],
       }),
     }),

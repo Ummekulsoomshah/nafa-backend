@@ -8,6 +8,7 @@ export class AiController {
 
   @Post('recommend-by-risk')
   async getRecommendations(@Body() aidto:RiskDto) {
+    console.log('Received risk level:', aidto.risk);
     return await this.aiService.getRecommendationsByRisk(aidto.risk);
   }
 }

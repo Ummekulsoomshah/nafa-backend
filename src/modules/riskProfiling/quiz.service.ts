@@ -32,8 +32,8 @@ export class QuizService {
         await manager.save(RiskAnswer, answerEntities);
         const riskCategory = await this.riskClassifierService.classifyRisk(answerEntities);
         await manager.update(User, id, { riskCategory });
-        
-        return { message: 'Answers submitted successfully', riskCategory };
+        console.log(`User ID ${id} classified as risk category: ${riskCategory}`);
+        return { message: 'Answers submitted successfully', riskCategory,id };
     });
 }
 }

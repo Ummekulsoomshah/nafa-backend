@@ -7,9 +7,9 @@ export class RiskClassifierService {
     private readonly logger = new Logger(RiskClassifierService.name);
 
     constructor() {
-        const apiKey = process.env.GEMINI_KEY;
+        const apiKey = process.env.GEMINI_API_KEY;
         if (!apiKey) {
-            throw new Error('GEMINI_KEY environment variable is not set');
+            throw new Error('GEMINI_API_KEY environment variable is not set');
         }
         const genAI = new GoogleGenerativeAI(apiKey);
         this.model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
