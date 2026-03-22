@@ -17,8 +17,7 @@ export class PredictorService {
     const modelName = 'gemini-2.5-flash';
     
    const prompt = `
-   Perform a professional financial analysis for: 
-  Company Name: "Meezan Bank"
+   Perform a professional financial analysis for:
   Symbol: "${symbol}" 
   Exchange: "Pakistan Stock Exchange (PSX)"
   Focus on predicting the market condition for tomorrow.

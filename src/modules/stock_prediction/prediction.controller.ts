@@ -4,7 +4,7 @@ import { PredictorService } from './prediction.service';
 import { ApiTags } from '@nestjs/swagger';
 import { SymbolDto } from './dto/symbol.dto';
 
-@Controller('api/v1/predictor')
+@Controller('predictor')
 export class PredictorController {
   constructor(private readonly predictorService:PredictorService
   ) {}
@@ -15,7 +15,7 @@ export class PredictorController {
     return this.predictorService.getPrediction(symboldto.symbol);
   }
 
-    @ApiTags('Stock Prediction')
+  @ApiTags('Stock Prediction')
   @Get('history')
   async history() {
     return this.predictorService.getRecentHistory();
