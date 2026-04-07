@@ -10,9 +10,12 @@ import { DbModule } from './db/db.module';
 import { AiModule } from './ai/ai.module';
 import { PredictionModule } from './modules/stock_prediction/prediction.module';
 import { StockModule } from './modules/stocks/stock.module';
-
+import { ConfigModule } from '@nestjs/config';
 @Module({
-  imports: [UserModule,QuizModule,
+  imports: [ 
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),UserModule,QuizModule,
     DbModule,AiModule,PredictionModule,StockModule],
   controllers: [AppController],
   providers: [AppService],
