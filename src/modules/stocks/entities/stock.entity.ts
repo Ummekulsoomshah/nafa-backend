@@ -1,32 +1,46 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('stock')
+@Entity('stocks')
 export class Stock {
     @PrimaryGeneratedColumn()
     id: number;
-    @Column()
-    Ticker: string;
-    @Column()
-    CompanyName: string;
-    @Column()
-    Status: string;
-    @Column()
-    OpenPrice: string;
-    @Column()
-    ClosePrice: string;
-    @Column()
-    DailyReturn: string;
-    @Column('bigint')
-    SharesOutstanding: string;
-    @Column('bigint')
-    MarketCap: string;
-    @Column()
-    CAGR: string;
-    @Column()
-    Volatility: string;
-    @Column()
-    RiskScore: string;
-    @Column()
-    RiskLevel: string;
-    @Column()
-    Sector: string;}
+
+    @Column({ type: 'varchar', nullable: true })
+    symbol: string;
+
+    @Column({ type: 'varchar', nullable: true })
+    name: string;
+
+    @Column({ type: 'int', nullable: true })
+    open: number;
+
+    @Column({ type: 'int', nullable: true })
+    high: number;
+
+    @Column({ type: 'int', nullable: true })
+    low: number;
+
+    @Column({ type: 'int', nullable: true })
+    current_price: number;
+
+    @Column({ type: 'int', nullable: true })
+    change: number;
+
+    @Column({ type: 'int', nullable: true })
+    volume: number;
+
+    @Column({ type: 'int', nullable: true })
+    beta: number;
+
+    @Column({ type: 'varchar', nullable: true })
+    risk_level: string;
+
+    @Column({ type: 'varchar', nullable: true })
+    sector: string;
+
+    @Column({ type: 'varchar', nullable: true })
+    shariah_status: string;
+
+    @Column({ type: 'varchar', nullable: true })
+    timestamp: string;
+}

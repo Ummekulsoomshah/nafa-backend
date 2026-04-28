@@ -5,9 +5,10 @@ dotenv.config();
 
 export const databaseConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-    ssl: {
-    rejectUnauthorized: false,
-  },
+  //   ssl: {
+  //   rejectUnauthorized: false,
+  // },
+  // ssl:true,
   host: process.env.DB_HOST || 'localhost',
   port: parseInt(process.env.DB_PORT || '5432', 10), // <-- fix here
   username: process.env.DB_USER || 'postgres',

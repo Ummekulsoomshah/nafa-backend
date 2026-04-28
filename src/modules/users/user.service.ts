@@ -30,7 +30,7 @@ export class UserService {
         return await this.userRepository.find();
     }
     async logIn(email: string, password: string): Promise<{ id: number, email: string, access_token: string }> {
-        const user = await this.userRepository.findOne({ where: { email }, select: ['id', 'email','password']    })
+        const user = await this.userRepository.findOne({ where: { email },  select: ['id', 'email', 'password', 'username', 'role', 'riskCategory']    })
         if (!user) {
             throw new Error('User not found')
         }
@@ -38,6 +38,7 @@ export class UserService {
         if (!isAuth) {
             throw new Error('Invalid credentials')
         }
+        console.log("User authenticated successfully",user);
         const access_token = await this.jwtService.signAsync({ id: user.id, username: user.username, role: user.role })
         return { ...user, access_token };
     }
