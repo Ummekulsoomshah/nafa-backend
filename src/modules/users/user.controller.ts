@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, Param, ParseIntPipe, Post, UseGuards } from "@nestjs/common";
 import { UserService } from "./user.service";
 import { UserCreateDto } from "./dto/user-create.dto";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
@@ -31,7 +31,8 @@ export class UserController {
     }
 
     @Get('user/:id')
-    getUserById(@Param('id') id: number) {
+    @UseGuards(AuthGuard)
+    getUserById(@Param('id', ParseIntPipe)  id: number) {
         return this.userservice.findUser(id);
     }
     @ApiBearerAuth()

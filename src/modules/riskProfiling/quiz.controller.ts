@@ -13,6 +13,7 @@ export class QuizController {
     @ApiTags('Quiz Api')
     @Post('submit-answers/:id')
     async submitAnswers(@Body() answers: SubmitQuizDto, @Request() req: any) {
+        console.log('Received answers:', answers);
         const id = req.user.id;
         return await this.quizService.submitAnswers(answers, id);
     }

@@ -10,6 +10,6 @@ export const databaseConfig: TypeOrmModuleOptions = {
   username: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASS || 'password',
   database: process.env.DB_NAME || 'nafa',
-  synchronize: false, // disable in production
+  synchronize: true, // disable in production
   autoLoadEntities: true,
 };

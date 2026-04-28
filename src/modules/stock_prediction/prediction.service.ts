@@ -12,8 +12,7 @@ export class PredictorService {
     // private predictionRepository: Repository<PredictionHistory>,
   ) {}
   async getPrediction(symbol: string) {
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY3 });
-    // const modelName = 'gemini-3-pro-preview';
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     const modelName = 'gemini-2.5-flash';
     
    const prompt = `
