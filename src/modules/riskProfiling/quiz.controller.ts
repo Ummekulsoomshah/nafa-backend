@@ -17,4 +17,12 @@ export class QuizController {
         const id = req.user.id;
         return await this.quizService.submitAnswers(answers, id);
     }
+
+    // @ApiBearerAuth()
+    // @UseGuards(AuthGuard)
+    @ApiTags('Quiz Api')
+    @Post('risk-update/:id/:risk')
+    async riskUpdate(@Param('risk') risk: string, @Param('id') id: number) {
+        return await this.quizService.updateRiskCategory(risk, id);
+    }
 }

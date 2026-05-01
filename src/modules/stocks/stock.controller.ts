@@ -1,4 +1,4 @@
-import { Controller, Post ,Get,Param} from "@nestjs/common";
+import { Controller, Post ,Get,Param, Query} from "@nestjs/common";
 import { StockService } from "./stock.service";
 import { ApiTags } from "@nestjs/swagger";
 
@@ -23,4 +23,12 @@ export class StockController {
     async findByTicker(@Param('ticker') ticker: string) {
         return await this.stockservice.findByTicker(ticker);
     }
+
+    @Get('history/:symbol')
+async getStockHistory(
+  @Param('symbol') symbol: string,
+  @Query('range') range: string = '3mo',
+) {
+  return await this.stockservice.getStockHistory(symbol, range);
+}
 }

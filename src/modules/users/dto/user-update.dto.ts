@@ -1,22 +1,26 @@
-import { IsNotEmpty, IsString, Matches, MinLength } from "class-validator";
+import { IsEmail, IsIn, IsOptional, IsString, Length, Matches } from "class-validator";
 
 export class UserUpdateDto {
+    @IsOptional()
     @IsString()
-    @IsNotEmpty()
+    @Length(6, 20, { message: 'Username must be between 6 and 20 characters' })
+    @Matches(/^[a-zA-Z ]+$/, { message: 'Username can only contain letters and spaces' })
     username?: string;
 
-    @IsString()
-    @IsNotEmpty()
-    email?: string
+    @IsOptional()
+    @IsEmail({}, { message: 'Enter a valid email address' })
+    email?: string;
 
+    @IsOptional()
     @IsString()
-    @IsNotEmpty()
-    @MinLength(8)
-    @Matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, {
-        message: 'Password must contain at least one letter, one number, and one special character',
+    @Length(6, 15, { message: 'Password must be between 6 and 15 characters' })
+    @Matches(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,15}$/, {
+        message: 'Password must contain uppercase, lowercase, number and special character',
     })
     password?: string;
 
+    @IsOptional()
     @IsString()
-    role?: string
+    @IsIn(['Low', 'Medium', 'High'], { message: 'Risk category must be Low, Medium or High' })
+    riskCategory?: string;
 }

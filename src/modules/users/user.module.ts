@@ -5,10 +5,11 @@ import { UserController } from "./user.controller";
 import { UserService } from "./user.service";
 import { User } from "./entites/user.entity";
 import { jwtConstants } from "src/constants/constants";
+import { RiskAnswer } from "../riskProfiling/entities/risk-answer.entity";
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([User]),
+        TypeOrmModule.forFeature([User,RiskAnswer]),
         JwtModule.register({
              global: true,
       secret: jwtConstants.secret,

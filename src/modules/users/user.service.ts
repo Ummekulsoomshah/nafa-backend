@@ -1,16 +1,20 @@
-import { Injectable } from "@nestjs/common";
+import { ConflictException, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { User } from "./entites/user.entity";
 import { Repository } from "typeorm";
 import * as bcrypt from 'bcrypt';
 import { JwtService } from "@nestjs/jwt";
 import { emit } from "process";
+import { UserUpdateDto } from "./dto/user-update.dto";
+import { RiskAnswer } from "../riskProfiling/entities/risk-answer.entity";
 
 
 @Injectable()
 export class UserService {
     constructor(
         @InjectRepository(User) private userRepository: Repository<User>,
+                @InjectRepository(RiskAnswer) private quizRepository: Repository<RiskAnswer>,
+          
         private jwtService: JwtService
     ) { }
 
@@ -26,6 +30,48 @@ export class UserService {
         const access_token = await this.jwtService.signAsync({ id: userResult.id, userRole: userResult.role });
         return { user: userResult, access_token };
     }
+    async updateProfile(id: number, dto: UserUpdateDto): Promise<Omit<User, 'password'>> {
+      console.log('Updating profile for user ID:', id, 'with data:', dto);
+    const user = await this.userRepository.findOne({ where: { id } });
+
+    if (!user) {
+      throw new NotFoundException(`User with id ${id} not found`);
+    }
+
+    // Check if email is taken by another user
+    if (dto.email && dto.email !== user.email) {
+      const emailExists = await this.userRepository.findOne({
+        where: { email: dto.email },
+      });
+      if (emailExists) {
+        throw new ConflictException('Email is already in use');
+      }
+    }
+
+    // Hash password if provided
+    if (dto.password) {
+      dto.password = await bcrypt.hash(dto.password, 10);
+    }
+
+    // Only update fields that were actually sent
+    if (dto.username)     user.username     = dto.username;
+    if (dto.email)        user.email        = dto.email;
+    if (dto.password)     user.password     = dto.password;
+    if (dto.riskCategory) user.riskCategory = dto.riskCategory;
+
+    await this.userRepository.save(user);
+
+    // Return user without password
+    const { password, ...result } = user;
+    return result;
+  }
+  async deleteUser(id: number) {
+  const user = await this.userRepository.findOne({ where: { id } });
+  if (!user) throw new NotFoundException('User not found');
+  await this.quizRepository.delete({ user: { id } });
+  await this.userRepository.remove(user);
+  return { message: 'Account deleted successfully' };
+}
 
     async findUsers() {
         return await this.userRepository.find();
