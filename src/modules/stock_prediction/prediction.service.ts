@@ -21,21 +21,23 @@ export class PredictorService {
   constructor(
     // @InjectRepository(PredictionHistory)
     // private predictionRepository: Repository<PredictionHistory>,
-  ) {}
+  ) { }
   private currentKeyIndex = 0;
   private getNextApiKey(): string {
     const key = this.apiKeys[this.currentKeyIndex];
-    // Rotate index: if it hits 10, it goes back to 0
+    console.log(`Using API key index: ${this.currentKeyIndex}`);
+
+    // Prepare the index for the NEXT call
     this.currentKeyIndex = (this.currentKeyIndex + 1) % this.apiKeys.length;
-    console.log(`Using API key index: ${this.currentKeyIndex} for this request: ${key}`);
     return key;
   }
-  async getPrediction(symbol: string) {
-    
+  async getPrediction(symbol: string,retryCount = 0) {
+
     const ai = new GoogleGenAI({ apiKey: this.getNextApiKey() });
     const modelName = 'gemini-2.5-flash';
-    
-   const prompt = `
+    const MAX_RETRIES = 3;
+
+    const prompt = `
    Perform a professional financial analysis for:
   Symbol: "${symbol}" 
   Exchange: "Pakistan Stock Exchange (PSX)"
@@ -91,7 +93,8 @@ export class PredictorService {
 `;
 
 
-    try {
+    try
+     {
       const response = await ai.models.generateContent({
         model: modelName,
         contents: prompt,
@@ -123,7 +126,7 @@ export class PredictorService {
         console.error('Failed to parse JSON from model response:', { text, error: err });
         throw new InternalServerErrorException('Failed to parse model response as JSON');
       }
-      
+
       const groundingChunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks;
       const sources = groundingChunks?.map(chunk => {
         if (chunk.web) {
@@ -148,6 +151,12 @@ export class PredictorService {
         // generatedAt: history.createdAt,
       };
     } catch (error) {
+      if ((error.status === 503 || error.status === 429) && retryCount < MAX_RETRIES) {
+      const delay = Math.pow(2, retryCount) * 1000; // 1s, 2s, 4s...
+      console.warn(`Retrying in ${delay}ms due to API demand...`);
+      await new Promise(res => setTimeout(res, delay));
+      return this.getPrediction(symbol, retryCount + 1);
+    }
       console.error('Gemini API Error:', error);
       throw new InternalServerErrorException('Failed to generate market prediction');
     }
@@ -160,30 +169,30 @@ export class PredictorService {
 
     try {
       return JSON.parse(trimmed);
-    } catch (_) {}
+    } catch (_) { }
 
     const jsonFence = trimmed.match(/```json\s*([\s\S]*?)\s*```/i);
     if (jsonFence) {
-      try { return JSON.parse(jsonFence[1].trim()); } catch (_) {}
+      try { return JSON.parse(jsonFence[1].trim()); } catch (_) { }
     }
 
     const fence = trimmed.match(/```(?:[^\n]*)\n([\s\S]*?)\n```/);
     if (fence) {
-      try { return JSON.parse(fence[1].trim()); } catch (_) {}
+      try { return JSON.parse(fence[1].trim()); } catch (_) { }
     }
 
     const firstBrace = trimmed.indexOf('{');
     const lastBrace = trimmed.lastIndexOf('}');
     if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
       const candidate = trimmed.substring(firstBrace, lastBrace + 1);
-      try { return JSON.parse(candidate); } catch (_) {}
+      try { return JSON.parse(candidate); } catch (_) { }
     }
 
     const firstBracket = trimmed.indexOf('[');
     const lastBracket = trimmed.lastIndexOf(']');
     if (firstBracket !== -1 && lastBracket !== -1 && lastBracket > firstBracket) {
       const candidate = trimmed.substring(firstBracket, lastBracket + 1);
-      try { return JSON.parse(candidate); } catch (_) {}
+      try { return JSON.parse(candidate); } catch (_) { }
     }
 
     throw new Error('No JSON found in text');
