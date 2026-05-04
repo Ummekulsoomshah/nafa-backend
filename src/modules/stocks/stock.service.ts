@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DataSource } from 'typeorm';
 import { Stock } from './entities/stock.entity';
@@ -31,7 +31,10 @@ export class StockService {
   }
 
   async findAll(): Promise<Stock[]> {
-    return this.latestStocksQuery().getMany();
+   return this.latestStocksQuery()
+    .where('s.current_price IS NOT NULL')
+    .andWhere('s.current_price > 0')
+    .getMany();
   }
 
   async findByTicker(ticker: string): Promise<Stock | null> {
@@ -113,7 +116,7 @@ async getStockHistory(symbol: string, range: string = '3mo') {
     });
 
     const result = response.data?.chart?.result?.[0];
-    if (!result) throw new Error('No data from Yahoo Finance');
+    if (!result) throw new NotFoundException(`Yahoo Finance has no data for ${symbol}`);
 
     const timestamps: number[] = result.timestamp;
     const closes: number[]     = result.indicators?.quote?.[0]?.close;
@@ -156,7 +159,57 @@ async getStockHistory(symbol: string, range: string = '3mo') {
       },
     };
   } catch (e) {
-    throw new Error(`Failed to fetch history for ${symbol}: ${e}`);
+    throw new NotFoundException(`Failed to fetch history for ${symbol}: ${e}`);
   }
+}
+
+
+
+// stock.service.ts
+async getDbHistory(symbol: string) {
+  // Get all DB entries for this symbol ordered by timestamp
+  const records = await this.dataSource
+    .createQueryBuilder(Stock, 's')
+    .where('s.symbol = :symbol', { symbol })
+    .orderBy('s.timestamp', 'ASC')
+    .getMany();
+
+  if (!records || records.length === 0) {
+    throw new NotFoundException(`No DB records found for ${symbol}`);
+  }
+
+  const history = records.map(r => ({
+    date:   r.timestamp?.toString().split('T')[0] ?? '',
+    open:   r.open    ?? null,
+    high:   r.high    ?? null,
+    low:    r.low     ?? null,
+    close:  r.current_price ?? null,
+    volume: r.volume  ?? null,
+  })).filter(h => h.close !== null);
+
+  if (history.length === 0) {
+    throw new NotFoundException(`All records for ${symbol} have null prices`);
+  }
+
+  const prices     = history.map(h => h.close as number);
+  const firstPrice = prices[0];
+  const lastPrice  = prices[prices.length - 1];
+  const change     = lastPrice - firstPrice;
+  const changePct  = firstPrice > 0 ? ((change / firstPrice) * 100) : 0;
+
+  return {
+    symbol,
+    source:  'database',
+    history,
+    stats: {
+      firstPrice,
+      lastPrice,
+      change:    parseFloat(change.toFixed(2)),
+      changePct: parseFloat(changePct.toFixed(2)),
+      highest:   Math.max(...prices),
+      lowest:    Math.min(...prices),
+      totalDays: history.length,
+    },
+  };
 }
 }

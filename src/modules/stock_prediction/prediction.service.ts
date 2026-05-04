@@ -7,12 +7,32 @@ import { PredictionHistory } from './entities/prediction.entity';
 
 @Injectable()
 export class PredictorService {
+  private readonly apiKeys: string[] = [
+    process.env.API1 || '', // Fallback to GEMINI_API_KEY if API1 is not set
+    process.env.API2 || '',
+    process.env.API3 || '',
+    process.env.API4 || '',
+    process.env.API5 || '',
+    process.env.API6 || '',
+    process.env.API7 || '',
+    process.env.API8 || '',
+    process.env.API9 || '',
+  ];
   constructor(
     // @InjectRepository(PredictionHistory)
     // private predictionRepository: Repository<PredictionHistory>,
   ) {}
+  private currentKeyIndex = 0;
+  private getNextApiKey(): string {
+    const key = this.apiKeys[this.currentKeyIndex];
+    // Rotate index: if it hits 10, it goes back to 0
+    this.currentKeyIndex = (this.currentKeyIndex + 1) % this.apiKeys.length;
+    console.log(`Using API key index: ${this.currentKeyIndex} for this request: ${key}`);
+    return key;
+  }
   async getPrediction(symbol: string) {
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+    
+    const ai = new GoogleGenAI({ apiKey: this.getNextApiKey() });
     const modelName = 'gemini-2.5-flash';
     
    const prompt = `

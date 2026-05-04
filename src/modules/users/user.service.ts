@@ -1,4 +1,4 @@
-import { ConflictException, Injectable, NotFoundException } from "@nestjs/common";
+import { ConflictException, Injectable, InternalServerErrorException, NotFoundException, UnauthorizedException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { User } from "./entites/user.entity";
 import { Repository } from "typeorm";
@@ -19,17 +19,20 @@ export class UserService {
     ) { }
 
     async registerUser(username: string, email: string, password: string, role: string): Promise<{ user: User, access_token: string }> {
-        console.log("user details", { username, email, password, role });
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = this.userRepository.create({ username, email, password: hashedPassword, role });
-        const userResult = await this.userRepository.save(newUser);
-
-        if (!userResult) {
-            throw new Error('User registration failed');
-        }
-        const access_token = await this.jwtService.signAsync({ id: userResult.id, userRole: userResult.role });
-        return { user: userResult, access_token };
+    const existing = await this.userRepository.findOne({ where: { email } });
+    if (existing) {
+        throw new ConflictException('This email is already registered. Try logging in instead.');
     }
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = this.userRepository.create({ username, email, password: hashedPassword, role });
+    const userResult = await this.userRepository.save(newUser);
+    if (!userResult) {
+        throw new InternalServerErrorException('Account creation failed. Please try again.');
+    }
+    const access_token = await this.jwtService.signAsync({ id: userResult.id, userRole: userResult.role });
+    return { user: userResult, access_token };
+}
+
     async updateProfile(id: number, dto: UserUpdateDto): Promise<Omit<User, 'password'>> {
       console.log('Updating profile for user ID:', id, 'with data:', dto);
     const user = await this.userRepository.findOne({ where: { id } });
@@ -77,18 +80,20 @@ export class UserService {
         return await this.userRepository.find();
     }
     async logIn(email: string, password: string): Promise<{ id: number, email: string, access_token: string }> {
-        const user = await this.userRepository.findOne({ where: { email },  select: ['id', 'email', 'password', 'username', 'role', 'riskCategory']    })
-        if (!user) {
-            throw new Error('User not found')
-        }
-        const isAuth = await bcrypt.compare(password, user.password)
-        if (!isAuth) {
-            throw new Error('Invalid credentials')
-        }
-        console.log("User authenticated successfully",user);
-        const access_token = await this.jwtService.signAsync({ id: user.id, username: user.username, role: user.role })
-        return { ...user, access_token };
+    const user = await this.userRepository.findOne({ 
+        where: { email }, 
+        select: ['id', 'email', 'password', 'username', 'role', 'riskCategory'] 
+    });
+    if (!user) {
+        throw new UnauthorizedException('Incorrect email or password. Please try again.');
     }
+    const isAuth = await bcrypt.compare(password, user.password);
+    if (!isAuth) {
+        throw new UnauthorizedException('Incorrect email or password. Please try again.');
+    }
+    const access_token = await this.jwtService.signAsync({ id: user.id, username: user.username, role: user.role });
+    return { ...user, access_token };
+}
 
     async findUser(userId: number) {
         return await this.userRepository.findBy({ id: userId })
