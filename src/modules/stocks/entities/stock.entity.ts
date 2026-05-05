@@ -11,25 +11,25 @@ export class Stock {
     @Column({ type: 'varchar', nullable: true })
     name: string;
 
-    @Column({ type: 'int', nullable: true })
+    @Column({ type: 'float8', nullable: true })  // ✅ was int
     open: number;
 
-    @Column({ type: 'int', nullable: true })
+    @Column({ type: 'float8', nullable: true })  // ✅
     high: number;
 
-    @Column({ type: 'int', nullable: true })
+    @Column({ type: 'float8', nullable: true })  // ✅
     low: number;
 
-    @Column({ type: 'int', nullable: true })
+    @Column({ type: 'float8', nullable: true })  // ✅
     current_price: number;
 
-    @Column({ type: 'int', nullable: true })
+    @Column({ type: 'float8', nullable: true })  // ✅
     change: number;
 
-    @Column({ type: 'int', nullable: true })
+    @Column({ type: 'int', nullable: true })      // ✅ keep int
     volume: number;
 
-    @Column({ type: 'int', nullable: true })
+    @Column({ type: 'float8', nullable: true })  // ✅
     beta: number;
 
     @Column({ type: 'varchar', nullable: true })
